@@ -1,0 +1,14 @@
+---
+
+- name: Add repository
+  become: true
+  ansible.builtin.template:
+    src: hashicorp.repo.j2
+    dest: '{{ terraform_repo_file }}'
+
+- name: Install packages
+  become: true
+  dnf:
+    name: '{{ terraform_packages }}'
+    state: present
+    update_cache: yes

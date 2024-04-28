@@ -1,0 +1,7 @@
+---
+# Yum repository file.
+terraform_repo_file: '/etc/yum.repos.d/hashicorp.repo'
+
+# Packages to install after repo is added.
+terraform_packages:
+  - 'terraform'
